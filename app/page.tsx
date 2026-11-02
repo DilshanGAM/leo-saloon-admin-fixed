@@ -27,21 +27,23 @@ export default function Home() {
   //   )
 
 
-  const response = await api.post("/api/auth",
-      {
-        email : email,
-        password : password
-      }
-      
-  )
+    const response = await api.post("/api/auth",
+        {
+          email : email,
+          password : password
+        }
+        
+    )
 
-  window.location.href = "/dashboard"
+    if(response.data.role === "ADMIN"){
 
-    
+      window.location.href = "/dashboard"
 
-    
-  
+    }else{
 
+      toast.error("You are not authorized to access this page")
+
+    }
   }
 
   return (
