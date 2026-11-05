@@ -56,7 +56,7 @@ const dailyOperations: NavigationItem[] = [
 const catalog: NavigationItem[] = [
   {
     label: "Products",
-    href: "/dashboard/products",
+    href: "/dashboard/products?pageNumber=1&pageSize=10",
     icon: Package,
   },
   {
